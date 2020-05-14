@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+  <POU Name="PRG_VLS_MOTION" Id="{f5736d79-b854-4294-93a7-0582bfcfe282}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_VLS_MOTION
+VAR
+	 // VLS Motor 1
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:01
+        field: DESC VLS Motor 1
+    '}
+    M1: DUT_MotionStage;
+    fbMotion1: FB_MotionStage;
+
+	 // VLS Motor 2
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:02
+        field: DESC VLS Motor 2
+    '}
+    M2: DUT_MotionStage;
+    fbMotion2: FB_MotionStage;
+	
+	
+	// VLS Motor 3
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:03
+        field: DESC VLS Motor 3
+    '}
+    M3: DUT_MotionStage;
+    fbMotion3: FB_MotionStage;
+	
+	// VLS Motor 4
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:04
+        field: DESC VLS Motor 4
+    '}
+    M4: DUT_MotionStage;
+    fbMotion4: FB_MotionStage;
+	
+	// VLS Motor 5
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:05
+        field: DESC VLS Motor 5
+    '}
+    M5: DUT_MotionStage;
+    fbMotion5: FB_MotionStage;
+	
+	// VLS Motor 6
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:06
+        field: DESC VLS Motor 6
+    '}
+    M6: DUT_MotionStage;
+    fbMotion6: FB_MotionStage;
+	
+	
+	// VLS Motor 7
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:07
+        field: DESC VLS Motor 7
+    '}
+    M7: DUT_MotionStage;
+    fbMotion7: FB_MotionStage;
+	
+	// VLS Motor 8
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:08
+        field: DESC VLS Motor 8
+    '}
+    M8: DUT_MotionStage;
+    fbMotion8: FB_MotionStage;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbMotion1(stMotionStage := M1);
+M1.bHardwareEnable := TRUE;
+M1.bPowerSelf := TRUE;
+M1.bLimitForwardEnable := M1.Axis.NcToPlc.ActPos < 99.7;
+M1.bLimitBackwardEnable := M1.Axis.NcToPlc.ActPos > 0.2;
+
+fbMotion2(stMotionStage := M2);
+M2.bHardwareEnable := TRUE;
+M2.bPowerSelf := TRUE;
+M2.bLimitForwardEnable := M2.Axis.NcToPlc.ActPos < 99.7;
+M2.bLimitBackwardEnable := M2.Axis.NcToPlc.ActPos > 0.2;
+
+fbMotion3(stMotionStage := M3);
+M3.bHardwareEnable := TRUE;
+M3.bPowerSelf := TRUE;
+M3.bLimitForwardEnable := M3.Axis.NcToPlc.ActPos < 99.7;
+M3.bLimitBackwardEnable := M3.Axis.NcToPlc.ActPos > 0.2;
+
+fbMotion4(stMotionStage := M4);
+M4.bHardwareEnable := TRUE;
+M4.bPowerSelf := TRUE;
+M4.bLimitForwardEnable := M4.Axis.NcToPlc.ActPos < 99.7;
+M4.bLimitBackwardEnable := M4.Axis.NcToPlc.ActPos > 0.2;
+
+fbMotion5(stMotionStage := M5);
+M5.bHardwareEnable := TRUE;
+M5.bPowerSelf := TRUE;
+M5.bLimitForwardEnable := M5.Axis.NcToPlc.ActPos < 99.7;
+M5.bLimitBackwardEnable := M5.Axis.NcToPlc.ActPos > 0.2;
+
+fbMotion6(stMotionStage := M6);
+M6.bHardwareEnable := TRUE;
+M6.bPowerSelf := TRUE;
+M6.bLimitForwardEnable := M6.Axis.NcToPlc.ActPos < 99.7;
+M6.bLimitBackwardEnable := M6.Axis.NcToPlc.ActPos > 0.2;
+
+
+fbMotion7(stMotionStage := M7);
+M7.bHardwareEnable := TRUE;
+M7.bPowerSelf := TRUE;
+M7.bLimitForwardEnable := M7.Axis.NcToPlc.ActPos < 99.7;
+M7.bLimitBackwardEnable := M7.Axis.NcToPlc.ActPos > 0.2;
+
+fbMotion8(stMotionStage := M8);
+M8.bHardwareEnable := TRUE;
+M8.bPowerSelf := TRUE;
+M8.bLimitForwardEnable := M8.Axis.NcToPlc.ActPos < 99.7;
+M8.bLimitBackwardEnable := M8.Axis.NcToPlc.ActPos > 0.2;]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_VLS_MOTION">
+      <LineId Id="145" Count="46" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
