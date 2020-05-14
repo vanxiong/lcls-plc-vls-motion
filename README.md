@@ -1,12 +1,19 @@
-# lcls-twincat-template-project
+# lcls-plc-vls-motion
 
-This repository contains the standard files for starting a TwinCAT3 project and
-can be used as a template. 
+This repository contains the code for the VLS spectrometer motion control
+PLC project. 
 
-For more documentation on integrating TwinCAT3 and git, please see our confluence page:
-https://confluence.slac.stanford.edu/display/PCDS/TwinCAT+3+Git+Setup+and+Best+Practices
+For more documentation on this system, please see the Confluence page:
+TBD
 
-## When starting a new project
+## Adding the VLS to your motion PLC
 
- - [ ] Customize this Readme.md to match your own project.
- - [ ] (optional) Configure [doctr](https://pypi.org/project/doctr/) and add the deploy key to the .travis.yml file for auto-generated documentation. Doctr is a python utility for automatically pushing a gh-pages branch through the travis build process. A repository requires some 1st time configuration using the `doctr` command line tool but once that is complete, the pushing process is fully automated. For instructions on configuring doctr: https://github.com/drdoctr/doctr#run-doctr-configure. The doctr command line tool can be found in the [PCDS conda environment](https://github.com/pcdshub/pcds-envs).
+This project is intended to run witin another PLC project. An example main
+program is included to give an example of how to include the VLS into your
+project and serves as a stand alone test program for the VLS spectrometer. 
+
+ - [ ] Checkout this project from the appropriate Git repository. 
+ - [ ] Open your project and add the PRG_VLS_MOTION program from the checked
+       out VLS motion project.
+ - [ ] Add this program to your main program, optionally checking the
+       connection status of the VLS before executing it. 
