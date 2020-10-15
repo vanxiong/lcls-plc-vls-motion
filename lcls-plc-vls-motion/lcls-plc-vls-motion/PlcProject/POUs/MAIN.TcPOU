@@ -1,27 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.14">
   <POU Name="MAIN" Id="{e6fa2b58-86f6-4521-8196-c6010dfb509b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	wEcMasterDevID AT %I*		:WORD;
-	fbGetData_Coupler	 		:FB_GetMyLocalData;
-	stSlaveInfo_Coupler 		:ST_SlaveInfo;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* Example main program to show how to incorporate the VLS motion program *)
-
-(*in stSlaveInfo is all information for getting current topology data
-even if they changed by HotConnect*)
-fbGetData_Coupler(wEcMasterDevID:= wEcMasterDevID, stSlaveInfo=>stSlaveInfo_Coupler );
-
-IF stSlaveInfo_Coupler.bDataOk THEN // we are connected
-	PRG_VLS_MOTION(); // So, run the program associated with coupler
-END_IF]]></ST>
+      <ST><![CDATA[PRG_VLS_MOTION(); // So, run the program associated with coupler
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="22" Count="1" />
-      <LineId Id="10" Count="5" />
+      <LineId Id="15" Count="0" />
       <LineId Id="6" Count="0" />
     </LineIds>
   </POU>
