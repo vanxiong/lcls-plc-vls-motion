@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_VLS_MOTION" Id="{f5736d79-b854-4294-93a7-0582bfcfe282}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_VLS_MOTION
+VAR
+	 // VLS Motor 1; VLS-Slit-Right
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-3002_E1]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-3002_E1]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:01
+        field: DESC VLS Upper Slit Blade
+    '}
+    M1: DUT_MotionStage;
+    fbMotion1: FB_MotionStage;
+
+	 // VLS Motor 2; VLS-Slit-Left
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-3002_E2]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-3002_E2]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:02
+        field: DESC VLS Lower Slit Blade
+    '}
+    M2: DUT_MotionStage;
+    fbMotion2: FB_MotionStage;
+	
+	// VLS Motor 3; VLS-Slit-Down
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-3002_E3]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-3002_E3]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:03
+        field: DESC VLS Left Slit Blade
+    '}
+    M3: DUT_MotionStage;
+    fbMotion3: FB_MotionStage;
+	
+	
+	// VLS Motor 4; VLS-Slit-Up
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-1002_E4]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-1002_E4]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:04
+        field: DESC VLS Right Slit Blade
+    '}
+    M4: DUT_MotionStage;
+    fbMotion4: FB_MotionStage;
+	
+	
+	
+	// VLS Motor 5; focusing mirror
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-1002_E5]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-1002_E5]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:05
+        field: DESC VLS Motor 5
+    '}
+    M5: DUT_MotionStage;
+    fbMotion5: FB_MotionStage;
+	
+	// VLS Motor 6; grating
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-1002_E6]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-1002_E6]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:06
+        field: DESC VLS Motor 6
+    '}
+    M6: DUT_MotionStage;
+    fbMotion6: FB_MotionStage;
+	
+	// VLS Motor 7; camera translation
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-1002_E7]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-1002_E7]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:07
+        field: DESC VLS Motor 7
+    '}
+    M7: DUT_MotionStage;
+    fbMotion7: FB_MotionStage;
+	
+	// VLS Motor 8; camera pitch
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-1002_E8]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-1002_E8]^STM Status^Status^Digital input 2'}
+    {attribute 'pytmc' := '
+        pv: PLC:VLS:MOT:08
+        field: DESC VLS Motor 8
+    '}
+    M8: DUT_MotionStage;
+    fbMotion8: FB_MotionStage;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[M1.nEnableMode := Enum_StageEnableMode.ALWAYS;
+M1.bHardwareEnable := TRUE;
+M1.bPowerSelf := TRUE;
+//M1.bLimitForwardEnable := (M1.bLimitForwardEnable AND M1.bLimitBackwardEnable);
+//M1.bLimitBackwardEnable := (M1.bLimitForwardEnable AND M1.bLimitBackwardEnable);
+fbMotion1(stMotionStage := M1); // top slit blade
+
+M2.nEnableMode := Enum_StageEnableMode.ALWAYS;
+M2.bHardwareEnable := TRUE;
+M2.bPowerSelf := TRUE;
+//M2.bLimitForwardEnable := (M2.bLimitForwardEnable AND M2.bLimitBackwardEnable);
+//M2.bLimitBackwardEnable := (M2.bLimitForwardEnable AND M2.bLimitBackwardEnable);
+fbMotion2(stMotionStage := M2); // bottom slit blade
+
+M3.nEnableMode := Enum_StageEnableMode.ALWAYS;
+M3.bHardwareEnable := TRUE;
+M3.bPowerSelf := TRUE;
+//M3.bLimitForwardEnable := (M3.bLimitForwardEnable AND M3.bLimitBackwardEnable);
+//M3.bLimitBackwardEnable := (M3.bLimitForwardEnable AND M3.bLimitBackwardEnable);
+fbMotion3(stMotionStage := M3); // right slit blade
+
+M4.nEnableMode := Enum_StageEnableMode.ALWAYS;
+M4.bHardwareEnable := TRUE;
+M4.bPowerSelf := TRUE;
+//M4.bLimitForwardEnable := (M4.bLimitForwardEnable AND M4.bLimitBackwardEnable);
+//M4.bLimitBackwardEnable := (M4.bLimitForwardEnable AND M4.bLimitBackwardEnable);
+fbMotion4(stMotionStage := M4); // left slit blade
+
+M5.nEnableMode := Enum_StageEnableMode.ALWAYS;
+M5.bHardwareEnable := TRUE;
+M5.bPowerSelf := TRUE;
+//M5.bLimitForwardEnable := (M5.bLimitForwardEnable AND M5.bLimitBackwardEnable);
+//M5.bLimitBackwardEnable := (M5.bLimitForwardEnable AND M5.bLimitBackwardEnable);
+fbMotion5(stMotionStage := M5); // focusing mirror
+
+M6.nEnableMode := Enum_StageEnableMode.ALWAYS;
+M6.bHardwareEnable := TRUE;
+M6.bPowerSelf := TRUE;
+//M6.bLimitForwardEnable := (M6.bLimitForwardEnable AND M6.bLimitBackwardEnable);
+//M6.bLimitBackwardEnable := (M6.bLimitForwardEnable AND M6.bLimitBackwardEnable);
+fbMotion6(stMotionStage := M6); // grating
+
+M7.nEnableMode := Enum_StageEnableMode.ALWAYS;
+M7.bHardwareEnable := TRUE;
+M7.bPowerSelf := TRUE;
+//M7.bLimitForwardEnable := (M7.bLimitForwardEnable AND M7.bLimitBackwardEnable);
+//M7.bLimitBackwardEnable := (M7.bLimitForwardEnable AND M7.bLimitBackwardEnable);
+fbMotion7(stMotionStage := M7); // camera pitch
+
+M8.nEnableMode := Enum_StageEnableMode.ALWAYS;
+M8.bHardwareEnable := TRUE;
+M8.bPowerSelf := TRUE;
+//M8.bLimitForwardEnable := (M8.bLimitForwardEnable AND M8.bLimitBackwardEnable);
+//M8.bLimitBackwardEnable := (M8.bLimitForwardEnable AND M8.bLimitBackwardEnable);
+fbMotion8(stMotionStage := M8); // camera translation
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
