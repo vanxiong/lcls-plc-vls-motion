@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.2">
   <POU Name="Main" Id="{e6fa2b58-86f6-4521-8196-c6010dfb509b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -38,7 +38,7 @@ VAR
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-1002_E4]^STM Status^Status^Digital input 1;
 								.bLimitBackwardEnable:=TIIB[VLS_EP7041-1002_E4]^STM Status^Status^Digital input 2'}
     {attribute 'pytmc' := '
-        pv: pv: TMO:VLS:MMS:SU
+        pv: TMO:VLS:MMS:SU
         field: DESC VLS Upper Slit Blade
     '}
     M4: DUT_MotionStage;
@@ -137,28 +137,28 @@ ELSIF (fbStartDelay.Q) THEN
 	M1.bPowerSelf := TRUE;
 	//M1.bLimitForwardEnable := (M1.bLimitForwardEnable AND M1.bLimitBackwardEnable);
 	//M1.bLimitBackwardEnable := (M1.bLimitForwardEnable AND M1.bLimitBackwardEnable);
-	fbMotion1(stMotionStage := M1); // top slit blade
+	fbMotion1(stMotionStage := M1); // right slit blade
 	
 	M2.nEnableMode := Enum_StageEnableMode.ALWAYS;
 	M2.bHardwareEnable := TRUE;
 	M2.bPowerSelf := TRUE;
 	//M2.bLimitForwardEnable := (M2.bLimitForwardEnable AND M2.bLimitBackwardEnable);
 	//M2.bLimitBackwardEnable := (M2.bLimitForwardEnable AND M2.bLimitBackwardEnable);
-	fbMotion2(stMotionStage := M2); // bottom slit blade
+	fbMotion2(stMotionStage := M2); // left slit blade
 	
 	M3.nEnableMode := Enum_StageEnableMode.ALWAYS;
 	M3.bHardwareEnable := TRUE;
 	M3.bPowerSelf := TRUE;
 	//M3.bLimitForwardEnable := (M3.bLimitForwardEnable AND M3.bLimitBackwardEnable);
 	//M3.bLimitBackwardEnable := (M3.bLimitForwardEnable AND M3.bLimitBackwardEnable);
-	fbMotion3(stMotionStage := M3); // right slit blade
+	fbMotion3(stMotionStage := M3); // down slit blade
 	
 	M4.nEnableMode := Enum_StageEnableMode.ALWAYS;
 	M4.bHardwareEnable := TRUE;
 	M4.bPowerSelf := TRUE;
 	//M4.bLimitForwardEnable := (M4.bLimitForwardEnable AND M4.bLimitBackwardEnable);
 	//M4.bLimitBackwardEnable := (M4.bLimitForwardEnable AND M4.bLimitBackwardEnable);
-	fbMotion4(stMotionStage := M4); // left slit blade
+	fbMotion4(stMotionStage := M4); // up slit blade
 	
 	M5.nEnableMode := Enum_StageEnableMode.ALWAYS;
 	M5.bHardwareEnable := TRUE;
