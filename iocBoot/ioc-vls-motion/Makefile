@@ -5,11 +5,11 @@ IOC_INSTANCE_PATH := $(shell pwd)
 # Set PRODUCTION_IOC to 1 to move from a testing to a production IOC:
 PRODUCTION_IOC := 1
 
-PROJECT_NAME := lcls-plc-rixs-optics
-PROJECT_PATH := ../../lcls-plc-rixs-optics/lcls-plc-rixs-optics.tsproj
-PLC := rixs_optics
+PROJECT_NAME := lcls-plc-vls-motion
+PROJECT_PATH := ../../lcls-plc-vls-motion/lcls-plc-vls-motion.tsproj
+PLC := vls_motion
 
 PYTMC_OPTS := 
-PREFIX := PLC:RIXS:OPTICS
+PREFIX := PLC:VLS:MOTION
 
 include $(IOC_TOP)/iocBoot/templates/Makefile.base

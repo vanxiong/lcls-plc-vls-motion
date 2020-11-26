@@ -897,9 +897,9 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{83336B79-10F1-4438-B2D9-AC88D2B2585B}" Name="PlcProject" PrjFilePath="..\..\PlcProject\PlcProject.plcproj" TmcFilePath="..\..\PlcProject\PlcProject.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
+	<Project GUID="{83336B79-10F1-4438-B2D9-AC88D2B2585B}" Name="vls_motion" PrjFilePath="..\..\vls_motion\vls_motion.plcproj" TmcFilePath="..\..\vls_motion\vls_motion.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
 		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PlcProject\PlcProject.tmc">
-			<Name>PlcProject Instance</Name>
+			<Name>vls_motion Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
@@ -911,7 +911,7 @@ External Setpoint Generation:
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.Axis.NcToPlc</Name>
+					<Name>Main.M1.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -960,56 +960,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.bLimitForwardEnable</Name>
+					<Name>Main.M1.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.bLimitBackwardEnable</Name>
+					<Name>Main.M1.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.bHome</Name>
+					<Name>Main.M1.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.bHardwareEnable</Name>
+					<Name>Main.M1.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.nRawEncoderULINT</Name>
+					<Name>Main.M1.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.nRawEncoderUINT</Name>
+					<Name>Main.M1.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.nRawEncoderINT</Name>
+					<Name>Main.M1.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion1.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotion1.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1058,7 +1058,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.Axis.NcToPlc</Name>
+					<Name>Main.M2.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1107,56 +1107,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.bLimitForwardEnable</Name>
+					<Name>Main.M2.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.bLimitBackwardEnable</Name>
+					<Name>Main.M2.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.bHome</Name>
+					<Name>Main.M2.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.bHardwareEnable</Name>
+					<Name>Main.M2.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.nRawEncoderULINT</Name>
+					<Name>Main.M2.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.nRawEncoderUINT</Name>
+					<Name>Main.M2.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.nRawEncoderINT</Name>
+					<Name>Main.M2.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion2.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotion2.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1205,7 +1205,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.Axis.NcToPlc</Name>
+					<Name>Main.M3.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1254,56 +1254,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.bLimitForwardEnable</Name>
+					<Name>Main.M3.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.bLimitBackwardEnable</Name>
+					<Name>Main.M3.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.bHome</Name>
+					<Name>Main.M3.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.bHardwareEnable</Name>
+					<Name>Main.M3.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.nRawEncoderULINT</Name>
+					<Name>Main.M3.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.nRawEncoderUINT</Name>
+					<Name>Main.M3.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.nRawEncoderINT</Name>
+					<Name>Main.M3.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion3.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotion3.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1352,7 +1352,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.Axis.NcToPlc</Name>
+					<Name>Main.M4.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1401,56 +1401,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.bLimitForwardEnable</Name>
+					<Name>Main.M4.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.bLimitBackwardEnable</Name>
+					<Name>Main.M4.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.bHome</Name>
+					<Name>Main.M4.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.bHardwareEnable</Name>
+					<Name>Main.M4.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.nRawEncoderULINT</Name>
+					<Name>Main.M4.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.nRawEncoderUINT</Name>
+					<Name>Main.M4.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.nRawEncoderINT</Name>
+					<Name>Main.M4.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion4.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotion4.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1499,7 +1499,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.Axis.NcToPlc</Name>
+					<Name>Main.M5.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1548,56 +1548,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.bLimitForwardEnable</Name>
+					<Name>Main.M5.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.bLimitBackwardEnable</Name>
+					<Name>Main.M5.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.bHome</Name>
+					<Name>Main.M5.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.bHardwareEnable</Name>
+					<Name>Main.M5.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.nRawEncoderULINT</Name>
+					<Name>Main.M5.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.nRawEncoderUINT</Name>
+					<Name>Main.M5.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.nRawEncoderINT</Name>
+					<Name>Main.M5.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion5.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotion5.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1646,7 +1646,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.Axis.NcToPlc</Name>
+					<Name>Main.M6.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1695,56 +1695,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.bLimitForwardEnable</Name>
+					<Name>Main.M6.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.bLimitBackwardEnable</Name>
+					<Name>Main.M6.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.bHome</Name>
+					<Name>Main.M6.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.bHardwareEnable</Name>
+					<Name>Main.M6.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.nRawEncoderULINT</Name>
+					<Name>Main.M6.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.nRawEncoderUINT</Name>
+					<Name>Main.M6.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.nRawEncoderINT</Name>
+					<Name>Main.M6.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion6.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotion6.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1793,7 +1793,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.Axis.NcToPlc</Name>
+					<Name>Main.M7.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1842,56 +1842,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.bLimitForwardEnable</Name>
+					<Name>Main.M7.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.bLimitBackwardEnable</Name>
+					<Name>Main.M7.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.bHome</Name>
+					<Name>Main.M7.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.bHardwareEnable</Name>
+					<Name>Main.M7.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.nRawEncoderULINT</Name>
+					<Name>Main.M7.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.nRawEncoderUINT</Name>
+					<Name>Main.M7.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.nRawEncoderINT</Name>
+					<Name>Main.M7.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion7.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotion7.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1940,7 +1940,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.Axis.NcToPlc</Name>
+					<Name>Main.M8.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1989,56 +1989,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.bLimitForwardEnable</Name>
+					<Name>Main.M8.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.bLimitBackwardEnable</Name>
+					<Name>Main.M8.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.bHome</Name>
+					<Name>Main.M8.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.bHardwareEnable</Name>
+					<Name>Main.M8.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.nRawEncoderULINT</Name>
+					<Name>Main.M8.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.nRawEncoderUINT</Name>
+					<Name>Main.M8.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.nRawEncoderINT</Name>
+					<Name>Main.M8.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion8.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotion8.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2090,123 +2090,123 @@ External Setpoint Generation:
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.Axis.PlcToNc</Name>
+					<Name>Main.M1.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M1.bBrakeRelease</Name>
+					<Name>Main.M1.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion1.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotion1.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.Axis.PlcToNc</Name>
+					<Name>Main.M2.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M2.bBrakeRelease</Name>
+					<Name>Main.M2.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion2.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotion2.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.Axis.PlcToNc</Name>
+					<Name>Main.M3.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M3.bBrakeRelease</Name>
+					<Name>Main.M3.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion3.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotion3.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.Axis.PlcToNc</Name>
+					<Name>Main.M4.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M4.bBrakeRelease</Name>
+					<Name>Main.M4.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion4.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotion4.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.Axis.PlcToNc</Name>
+					<Name>Main.M5.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M5.bBrakeRelease</Name>
+					<Name>Main.M5.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion5.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotion5.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.Axis.PlcToNc</Name>
+					<Name>Main.M6.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M6.bBrakeRelease</Name>
+					<Name>Main.M6.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion6.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotion6.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.Axis.PlcToNc</Name>
+					<Name>Main.M7.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M7.bBrakeRelease</Name>
+					<Name>Main.M7.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion7.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotion7.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.Axis.PlcToNc</Name>
+					<Name>Main.M8.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.M8.bBrakeRelease</Name>
+					<Name>Main.M8.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PRG_VLS_MOTION.fbMotion8.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotion8.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 			</Vars>
@@ -2235,70 +2235,70 @@ External Setpoint Generation:
 		</Instance>
 	</Project>
 	<Mappings>
-		<OwnerA Name="PlcProject Instance">
+		<OwnerA Name="vls_motion Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 2 (EK1200)^Term 1 (EK1122-0008)^VLS_EP7041-1002_E4">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 2 (EK1200)^Term 1 (EK1122-0008)^VLS_EP7041-1002_E5">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 2 (EK1200)^Term 1 (EK1122-0008)^VLS_EP7041-1002_E6">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 2 (EK1200)^Term 1 (EK1122-0008)^VLS_EP7041-1002_E7">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M7.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M7.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M7.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M7.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 2 (EK1200)^Term 1 (EK1122-0008)^VLS_EP7041-1002_E8">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M8.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M8.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M8.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M8.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 2 (EK1200)^Term 1 (EK1122-0008)^VLS_EP7041-3002_E1">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 2 (EK1200)^Term 1 (EK1122-0008)^VLS_EP7041-3002_E2">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 2 (EK1200)^Term 1 (EK1122-0008)^VLS_EP7041-3002_E3">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^VLS-Camera-Dist">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M7.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^PRG_VLS_MOTION.M7.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Main.M7.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M7.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^VLS-Camera-Pitch">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M8.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^PRG_VLS_MOTION.M8.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Main.M8.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M8.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^VLS-Focus-Mirror">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M5.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^PRG_VLS_MOTION.M5.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Main.M5.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M5.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^VLS-Grating">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M6.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^PRG_VLS_MOTION.M6.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Main.M6.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M6.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^VLS-Slit-Down">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M3.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^PRG_VLS_MOTION.M3.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Main.M3.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M3.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^VLS-Slit-Left">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M2.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^PRG_VLS_MOTION.M2.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Main.M2.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M2.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^VLS-Slit-Right">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^PRG_VLS_MOTION.M1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Main.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^VLS-Slit-Up">
-				<Link VarA="PlcTask Inputs^PRG_VLS_MOTION.M4.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^PRG_VLS_MOTION.M4.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^Main.M4.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M4.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

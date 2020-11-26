@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="PRG_VLS_MOTION" Id="{f5736d79-b854-4294-93a7-0582bfcfe282}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM PRG_VLS_MOTION
+  <POU Name="Main" Id="{e6fa2b58-86f6-4521-8196-c6010dfb509b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main
 VAR
 	 // VLS Motor 1; VLS-Slit-Right
 	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-3002_E1]^STM Status^Status^Digital input 1;
@@ -91,6 +91,7 @@ VAR
 	fbWritePersistentData	: WritePersistentData;
 	bInit					: BOOL := TRUE;
 	fbWriteDelay			: TON;
+	fbStartDelay			: TON;
 	mcSetPosition			: ARRAY [1..8] of MC_SetPosition;
 END_VAR
 
@@ -103,10 +104,11 @@ VAR PERSISTENT
 	fGratingPos		: LREAL;
 	fCameraDistPos	: LREAL;
 	fCameraPitchPos	: LREAL;
-
+	test			: LREAL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF bInit THEN
+      <ST><![CDATA[fbStartDelay(IN:=TRUE, PT:=T#1s);
+IF bInit and fbStartDelay.Q THEN
 	//Sets axes position with persistent value
 	mcSetPosition[1](Axis:=M1.Axis, Position:=fSlitRightPos, Mode:=FALSE, Execute:=TRUE);
 	mcSetPosition[2](Axis:=M2.Axis, Position:=fSlitLeftPos, Mode:=FALSE, Execute:=TRUE);
@@ -128,7 +130,7 @@ END_VAR]]></Declaration>
 		mcSetPosition[7](Axis:=M7.Axis, Execute:=FALSE);
 		mcSetPosition[8](Axis:=M8.Axis, Execute:=FALSE);
 	END_IF
-ELSE
+ELSIF (fbStartDelay.Q) THEN
 	
 	M1.nEnableMode := Enum_StageEnableMode.ALWAYS;
 	M1.bHardwareEnable := TRUE;
@@ -196,26 +198,25 @@ ELSE
 	fGratingPos		:= M6.Axis.NcToPlc.ActPos;
 	fCameraDistPos	:= M7.Axis.NcToPlc.ActPos;
 	fCameraPitchPos	:= M8.Axis.NcToPlc.ActPos;
+	
+	if fbWriteDelay.Q THEN
+		fbWritePersistentData(NETID:='', PORT:=851, START:=TRUE, TMOUT:=T#1S);
+		fbWriteDelay(IN:=FALSE);
+	ELSE
+		fbWritePersistentData(START:=FALSE);
+		fbWriteDelay(IN:=TRUE, PT:=T#0.5S);
+	END_IF
 END_IF
 ]]></ST>
     </Implementation>
-    <LineIds Name="PRG_VLS_MOTION">
-      <LineId Id="162" Count="0" />
-      <LineId Id="168" Count="0" />
-      <LineId Id="170" Count="6" />
-      <LineId Id="178" Count="3" />
-      <LineId Id="183" Count="7" />
-      <LineId Id="182" Count="0" />
-      <LineId Id="169" Count="0" />
-      <LineId Id="167" Count="0" />
-      <LineId Id="3" Count="54" />
-      <LineId Id="197" Count="0" />
-      <LineId Id="195" Count="0" />
-      <LineId Id="198" Count="0" />
-      <LineId Id="200" Count="6" />
-      <LineId Id="199" Count="0" />
-      <LineId Id="196" Count="0" />
-      <LineId Id="2" Count="0" />
+    <LineIds Name="Main">
+      <LineId Id="330" Count="0" />
+      <LineId Id="20" Count="89" />
+      <LineId Id="321" Count="2" />
+      <LineId Id="325" Count="3" />
+      <LineId Id="324" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="6" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

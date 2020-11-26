@@ -12,7 +12,7 @@
 			<NC File="NC.xti"/>
 		</Motion>
 		<Plc>
-			<Project File="PlcProject.xti"/>
+			<Project File="vls_motion.xti"/>
 		</Plc>
 		<Io>
 			<Device File="Device 1 (EtherCAT).xti" Id="1"/>
