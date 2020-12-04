@@ -24,8 +24,8 @@ VAR
     fbMotion2: FB_MotionStage;
 	
 	// VLS Motor 3; VLS-Slit-Down
-	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-3002_E3]^STM Status^Status^Digital input 2;
-								.bLimitBackwardEnable:=TIIB[VLS_EP7041-3002_E3]^STM Status^Status^Digital input 1'}
+	{attribute 'TcLinkTo' := '	.bLimitForwardEnable:=TIIB[VLS_EP7041-3002_E3]^STM Status^Status^Digital input 1;
+								.bLimitBackwardEnable:=TIIB[VLS_EP7041-3002_E3]^STM Status^Status^Digital input 2'}
     {attribute 'pytmc' := '
         pv: TMO:VLS:MMS:SD
         field: DESC VLS Lower Slit Blade
